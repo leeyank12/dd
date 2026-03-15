@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { useToast } from '../hooks/useToast';
 
-const API = 'http://localhost:5000/api/auth';
-
+//const API = 'http://localhost:5000/api/auth';
+const API = `${process.env.REACT_APP_API_URL || 'http://localhost:5000/api'}/auth`;
 export default function AuthPage() {
   const [mode, setMode] = useState('login'); // 'login' | 'register'
   const [form, setForm] = useState({ name: '', email: '', password: '' });
